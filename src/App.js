@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Shelf from './Shelf'
-import './App.css'
+import './index.scss'
 
 class App extends Component {
   render() {

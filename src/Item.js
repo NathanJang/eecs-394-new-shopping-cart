@@ -6,7 +6,7 @@ export default class Item extends Component {
     return (
       <div className='shelf-item'>
         <ItemDetails product={product} />
-        <div>Add to cart</div>
+        <div className='shelf-item__buy-btn'>Add to cart</div>
       </div>
     )
   }
@@ -17,9 +17,13 @@ class ItemDetails extends Component {
     const { product } = this.props
     return (
       <div>
-        <img src={require(`./static/products/${product.sku}_1.jpg`)} alt={product.title} />
-        <p>{product.title}</p>
-        <p>{product.price}</p>
+        <img
+          src={require(`./static/products/${product.sku}_1.jpg`)}
+          alt={product.title}
+          className='shelf-item__thumb'
+        />
+        <p className='shelf-item__title'>{product.title}</p>
+        <p className='shelf-item__price'>{product.price}</p>
       </div>
     )
   }
