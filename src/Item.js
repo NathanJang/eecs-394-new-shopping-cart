@@ -6,7 +6,7 @@ export default class Item extends Component {
     return (
       <div className='shelf-item'>
         <ItemDetails product={product} />
-        <AddToCartButton />
+        <div>Add to cart</div>
       </div>
     )
   }
@@ -21,14 +21,6 @@ class ItemDetails extends Component {
         <p>{product.title}</p>
         <p>{product.price}</p>
       </div>
-    )
-  }
-}
-
-class AddToCartButton extends Component {
-  render() {
-    return (
-      <div>Add to cart</div>
     )
   }
 }
