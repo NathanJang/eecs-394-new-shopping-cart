@@ -17,7 +17,7 @@ class ItemDetails extends Component {
     const { product } = this.props
     return (
       <div>
-        <img src={product.thumbnail} alt={product.title} />
+        <img src={require(`./static/products/${product.sku}_1.jpg`)} alt={product.title} />
         <p>{product.title}</p>
         <p>{product.price}</p>
       </div>
