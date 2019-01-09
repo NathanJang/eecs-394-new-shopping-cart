@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Item from './Item'
 import { products } from './static/data/products'
 
+import './shelf-style.scss'
+
 export default class Shelf extends Component {
   render() {
     return (
