@@ -8,13 +8,21 @@ export default class Product extends Component {
     }
   }
 
-  render() {
-    const { product, removeProduct } = this.props;
+  handleMouseOver = () => {
+    this.setState({ isMouseOver: true })
+  }
 
-    const classes = ['shelf-item'];
+  handleMouseOut = () => {
+    this.setState({ isMouseOver: false })
+  }
+
+  render() {
+    const { product, removeProduct } = this.props
+
+    const classes = ['shelf-item']
 
     if (!!this.state.isMouseOver) {
-      classes.push('shelf-item--mouseover');
+      classes.push('shelf-item--mouseover')
     }
 
     return (
