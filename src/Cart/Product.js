@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 
 export default class Product extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      isMouseOver: false
+    }
+  }
+
   render() {
     const { product, removeProduct } = this.props;
 
@@ -19,7 +26,7 @@ export default class Product extends Component {
           onClick={() => removeProduct(product)}
         />
         <img
-          class="shelf-item__thumb"
+          className="shelf-item__thumb"
           src={require(`../static/products/${product.sku}_2.jpg`)}
           alt={product.title}
         />

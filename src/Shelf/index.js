@@ -8,7 +8,7 @@ export default class Shelf extends Component {
   render() {
     return (
       <div className='shelf-container'>
-        {products.map(product => <Item product={product} handleProductSelection={this.props.handleProductSelection} />)}
+        {products.map(product => <Item product={product} handleProductSelection={this.props.handleProductSelection} key={product.sku} />)}
       </div>
     )
   }
