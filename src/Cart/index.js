@@ -15,7 +15,7 @@ export default class Cart extends Component {
     const { cartTotal, /*cartProducts, removeProduct*/ } = this.props
 
     const products = this.props.cartProducts.map(product => {
-      return <Product product={product} key={product.id} />
+      return <Product product={product} key={product.id} removeProduct={this.props.removeProduct} />
     })
 
     return (

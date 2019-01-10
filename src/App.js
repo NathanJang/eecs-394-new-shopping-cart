@@ -34,6 +34,13 @@ class App extends Component {
     })
   }
 
+  removeProduct = product => {
+    this.setState(prevState => {
+      const { cartProducts } = prevState
+      return { cartProducts: cartProducts.filter(p => p.sku !== product.sku) }
+    })
+  }
+
   render() {
     return (
       <div>
@@ -48,6 +55,7 @@ class App extends Component {
           cartProducts={this.state.cartProducts}
           isOpen={this.state.cartIsOpen}
           handleToggle={this.handleToggle}
+          removeProduct={this.removeProduct}
         />
       </div>
     )
