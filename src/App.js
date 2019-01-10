@@ -9,10 +9,12 @@ class App extends Component {
     this.state = {
       productQuantity: 0,
       cartProducts: [],
-      totalPrice: 0
+      totalPrice: 0,
+      cartIsOpen: false
     }
 
     this.handleProductSelection = this.handleProductSelection.bind(this)
+    this.handleToggle = this.handleToggle.bind(this)
   }
 
   handleProductSelection(product) {
@@ -22,6 +24,13 @@ class App extends Component {
         cartProducts: prevState.cartProducts.concat(product),
         totalPrice: prevState.totalPrice + product.price
       }
+    })
+    this.setState({ cartIsOpen: true })
+  }
+
+  handleToggle() {
+    this.setState({
+      cartIsOpen: !this.state.cartIsOpen
     })
   }
 
@@ -37,6 +46,8 @@ class App extends Component {
             totalPrice: this.state.totalPrice
           }}
           cartProducts={this.state.cartProducts}
+          isOpen={this.state.cartIsOpen}
+          handleToggle={this.handleToggle}
         />
       </div>
     )

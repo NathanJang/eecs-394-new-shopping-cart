@@ -6,9 +6,9 @@ import './style.scss'
 export default class Cart extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      isOpen: false
-    }
+    // this.state = {
+    //   isOpen: false
+    // }
   }
 
   render() {
@@ -19,12 +19,12 @@ export default class Cart extends Component {
     })
 
     return (
-      <div className={`float-cart${this.state.isOpen ? ' float-cart--open' : ''}`}>
+      <div className={`float-cart${this.props.isOpen ? ' float-cart--open' : ''}`}>
         {(() => {
-          if (this.state.isOpen) {
+          if (this.props.isOpen) {
             return (
               <div
-                onClick={() => this.setState({ isOpen: !this.state.isOpen })}
+                onClick={() => this.props.handleToggle()}
                 className="float-cart__close-btn"
               >
                 X
@@ -33,7 +33,7 @@ export default class Cart extends Component {
           } else {
             return (
               <span
-                onClick={() => this.setState({ isOpen: !this.state.isOpen })}
+                onClick={() => this.props.handleToggle()}
                 className="bag bag--float-cart-closed"
               >
                 <span className="bag__quantity">{cartTotal.productQuantity}</span>
