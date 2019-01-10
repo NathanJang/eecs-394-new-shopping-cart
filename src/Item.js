@@ -5,7 +5,7 @@ export default class Item extends Component {
   render() {
     const { product } = this.props
     return (
-      <div className='shelf-item'>
+      <div className='shelf-item' onClick={() => this.props.handleProductSelection(product)}>
         <ItemDetails product={product} />
         <div className='shelf-item__buy-btn'>Add to cart</div>
       </div>

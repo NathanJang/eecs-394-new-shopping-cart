@@ -11,12 +11,26 @@ class App extends Component {
       cartProducts: [],
       totalPrice: 0
     }
+
+    this.handleProductSelection = this.handleProductSelection.bind(this)
+  }
+
+  handleProductSelection(product) {
+    this.setState(prevState => {
+      return {
+        productQuantity: prevState.productQuantity + 1,
+        cartProducts: prevState.cartProducts.concat(product),
+        totalPrice: prevState.totalPrice + product.price
+      }
+    })
   }
 
   render() {
     return (
       <div>
-        <Shelf />
+        <Shelf
+          handleProductSelection={this.handleProductSelection}
+        />
         <Cart
           cartTotal={{
             productQuantity: this.state.productQuantity,
