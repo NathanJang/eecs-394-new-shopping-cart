@@ -1,1 +1,5 @@
-{}
+{
+  "projects": {
+    "staging": "eecs-394-shopping-cart"
+  }
+}
